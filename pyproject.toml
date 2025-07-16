@@ -8,4 +8,5 @@ dependencies = [
     "numpy",
     "aiohttp",
     "asyncpg",
+    "scikit-learn",
 ]

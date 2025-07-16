@@ -111,7 +111,7 @@ def train_decision_tree(
     try:
         from sklearn.tree import DecisionTreeClassifier
         from sklearn.model_selection import train_test_split
-        from sklearn.metrics import classification_report, accuracy_score, confusion_matrix
+        from sklearn.metrics import classification_report, accuracy_score, confusion_matrix, f1_score
     except ImportError:
         raise ImportError("scikit-learn is required for decision tree training. Please install it with: pip install scikit-learn")
     
@@ -137,8 +137,10 @@ def train_decision_tree(
     # Evaluate on test set
     y_pred = dt_classifier.predict(X_test)
     accuracy = accuracy_score(y_test, y_pred)
+    total_f1 = f1_score(y_test, y_pred, average='macro')
     
     print(f"\nTest Accuracy: {accuracy:.4f}")
+    print(f"Total F1 Score (macro): {total_f1:.4f}")
     print("\nClassification Report:")
     print(classification_report(y_test, y_pred))
     

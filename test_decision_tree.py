@@ -40,7 +40,7 @@ def test_imports():
         try:
             from sklearn.tree import DecisionTreeClassifier
             from sklearn.model_selection import train_test_split
-            from sklearn.metrics import classification_report, accuracy_score, confusion_matrix
+            from sklearn.metrics import classification_report, accuracy_score, confusion_matrix, f1_score
             print("✓ scikit-learn imports are available")
         except ImportError as e:
             print(f"⚠ scikit-learn not available: {e}")

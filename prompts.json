@@ -1,0 +1,322 @@
+[
+  {
+    "id": "threat_humans",
+    "prompt": "Werden in dem gegebenen Textsegment Menschen als bedroht oder gefährdet dargestellt? Antworte nur mit 'true' oder 'false'.\n\nText: {text}"
+  },
+  {
+    "id": "threat_nature",
+    "prompt": "Wird in dem gegebenen Textsegment die Natur oder Umwelt als bedroht beschrieben? Antworte nur mit 'true' oder 'false'.\n\nText: {text}"
+  },
+  {
+    "id": "threat_austria_europe",
+    "prompt": "Werden in dem gegebenen Textsegment Lebensräume als gefährdet erwähnt? Antworte nur mit 'true' oder 'false'.\n\nText: {text}"
+  },
+  {
+    "id": "threat_species",
+    "prompt": "Wird in dem gegebenen Textsegment über bedrohte Tier- oder Pflanzenarten gesprochen? Antworte nur mit 'true' oder 'false'.\n\nText: {text}"
+  },
+  {
+    "id": "time_future_threats",
+    "prompt": "Bezieht sich das gegebene Textsegment auf zukünftige Bedrohungen? Antworte nur mit 'true' oder 'false'.\n\nText: {text}"
+  },
+  {
+    "id": "time_current_dangers",
+    "prompt": "Werden in dem gegebenen Textsegment gegenwärtige Klimagefahren beschrieben? Antworte nur mit 'true' oder 'false'.\n\nText: {text}"
+  },
+  {
+    "id": "time_past_damages",
+    "prompt": "Wird in dem gegebenen Textsegment auf bereits eingetretene Klimaschäden verwiesen? Antworte nur mit 'true' oder 'false'.\n\nText: {text}"
+  },
+  {
+    "id": "space_austria",
+    "prompt": "Wird in dem gegebenen Textsegment Österreich als betroffenes Gebiet erwähnt? Antworte nur mit 'true' oder 'false'.\n\nText: {text}"
+  },
+  {
+    "id": "space_europe",
+    "prompt": "Werden in dem gegebenen Textsegment europäische Klimaauswirkungen thematisiert? Antworte nur mit 'true' oder 'false'.\n\nText: {text}"
+  },
+  {
+    "id": "space_global",
+    "prompt": "Wird in dem gegebenen Textsegment über globale Klimabedrohungen gesprochen? Antworte nur mit 'true' oder 'false'.\n\nText: {text}"
+  },
+  {
+    "id": "cause_climate_change",
+    "prompt": "Wird in dem gegebenen Textsegment der Klimawandel als Ursache für Probleme genannt? Antworte nur mit 'true' oder 'false'.\n\nText: {text}"
+  },
+  {
+    "id": "cause_human_activities",
+    "prompt": "Werden in dem gegebenen Textsegment menschliche Aktivitäten als Bedrohungsursache dargestellt? Antworte nur mit 'true' oder 'false'.\n\nText: {text}"
+  },
+  {
+    "id": "cause_causal_links",
+    "prompt": "Werden in dem gegebenen Textsegment kausale Zusammenhänge zwischen Emissionen und Schäden erklärt? Antworte nur mit 'true' oder 'false'.\n\nText: {text}"
+  },
+  {
+    "id": "impact_negative_consequences",
+    "prompt": "Werden in dem gegebenen Textsegment konkrete negative Folgen des Klimawandels beschrieben? Antworte nur mit 'true' oder 'false'.\n\nText: {text}"
+  },
+  {
+    "id": "impact_intensity",
+    "prompt": "Wird in dem gegebenen Textsegment die Intensität oder Schwere von Klimaauswirkungen betont? Antworte nur mit 'true' oder 'false'.\n\nText: {text}"
+  },
+  {
+    "id": "impact_quality_of_life",
+    "prompt": "Werden in dem gegebenen Textsegment Schäden für die Lebensqualität prognostiziert? Antworte nur mit 'true' oder 'false'.\n\nText: {text}"
+  },
+  {
+    "id": "manifestation_extreme_weather",
+    "prompt": "Wird in dem gegebenen Textsegment über Extremwetter gesprochen? Antworte nur mit 'true' oder 'false'.\n\nText: {text}"
+  },
+  {
+    "id": "manifestation_temperature_rise",
+    "prompt": "Werden in dem gegebenen Textsegment Temperaturanstiege als Problem erwähnt? Antworte nur mit 'true' oder 'false'.\n\nText: {text}"
+  },
+  {
+    "id": "manifestation_water_scarcity",
+    "prompt": "Wird in dem gegebenen Textsegment über Wassermangel oder Dürre berichtet? Antworte nur mit 'true' oder 'false'.\n\nText: {text}"
+  },
+  {
+    "id": "manifestation_floods",
+    "prompt": "Werden in dem gegebenen Textsegment Überschwemmungen als Bedrohung dargestellt? Antworte nur mit 'true' oder 'false'.\n\nText: {text}"
+  },
+  {
+    "id": "manifestation_sea_level",
+    "prompt": "Wird in dem gegebenen Textsegment der Meeresanstieg als Problem thematisiert? Antworte nur mit 'true' oder 'false'.\n\nText: {text}"
+  },
+  {
+    "id": "speech_act_warning",
+    "prompt": "Enthält das gegebene Textsegment eine Warnung vor Klimafolgen? Antworte nur mit 'true' oder 'false'.\n\nText: {text}"
+  },
+  {
+    "id": "speech_act_threat",
+    "prompt": "Wird in dem gegebenen Textsegment eine Drohung oder düstere Prognose ausgesprochen? Antworte nur mit 'true' oder 'false'.\n\nText: {text}"
+  },
+  {
+    "id": "speech_act_admonition",
+    "prompt": "Wird in dem gegebenen Textsegment eine Mahnung geäußert? Antworte nur mit 'true' oder 'false'.\n\nText: {text}"
+  },
+  {
+    "id": "solution_actor_citizens",
+    "prompt": "Werden in dem gegebenen Textsegment Bürger:innen als Handelnde angesprochen? Antworte nur mit 'true' oder 'false'.\n\nText: {text}"
+  },
+  {
+    "id": "solution_actor_politics",
+    "prompt": "Werden in dem gegebenen Textsegment politische Akteure zur Handlung aufgefordert? Antworte nur mit 'true' oder 'false'.\n\nText: {text}"
+  },
+  {
+    "id": "solution_actor_science",
+    "prompt": "Wird in dem gegebenen Textsegment die Wissenschaft als Lösungsakteur erwähnt? Antworte nur mit 'true' oder 'false'.\n\nText: {text}"
+  },
+  {
+    "id": "solution_actor_companies",
+    "prompt": "Werden in dem gegebenen Textsegment Unternehmen als Verantwortliche genannt? Antworte nur mit 'true' oder 'false'.\n\nText: {text}"
+  },
+  {
+    "id": "solution_time_immediate",
+    "prompt": "Werden in dem gegebenen Textsegment sofortige Maßnahmen gefordert? Antworte nur mit 'true' oder 'false'.\n\nText: {text}"
+  },
+  {
+    "id": "solution_time_future",
+    "prompt": "Wird in dem gegebenen Textsegment über zukünftige Lösungsschritte gesprochen? Antworte nur mit 'true' oder 'false'.\n\nText: {text}"
+  },
+  {
+    "id": "solution_time_longterm",
+    "prompt": "Werden in dem gegebenen Textsegment langfristige Klimaziele erwähnt? Antworte nur mit 'true' oder 'false'.\n\nText: {text}"
+  },
+  {
+    "id": "solution_space_local",
+    "prompt": "Werden in dem gegebenen Textsegment lokale Handlungsmöglichkeiten aufgezeigt? Antworte nur mit 'true' oder 'false'.\n\nText: {text}"
+  },
+  {
+    "id": "solution_space_global",
+    "prompt": "Werden in dem gegebenen Textsegment globale Kooperationen als Lösung dargestellt? Antworte nur mit 'true' oder 'false'.\n\nText: {text}"
+  },
+  {
+    "id": "solution_reason_benefits",
+    "prompt": "Werden in dem gegebenen Textsegment Vorteile von Klimaschutzmaßnahmen erklärt? Antworte nur mit 'true' oder 'false'.\n\nText: {text}"
+  },
+  {
+    "id": "solution_reason_risk_avoidance",
+    "prompt": "Wird in dem gegebenen Textsegment Risikovermeidung als Handlungsgrund genannt? Antworte nur mit 'true' oder 'false'.\n\nText: {text}"
+  },
+  {
+    "id": "solution_reason_positive_effects",
+    "prompt": "Werden in dem gegebenen Textsegment positive Effekte von Lösungen betont? Antworte nur mit 'true' oder 'false'.\n\nText: {text}"
+  },
+  {
+    "id": "solution_action_specific_measures",
+    "prompt": "Werden in dem gegebenen Textsegment spezifische Klimaschutzmaßnahmen vorgeschlagen? Antworte nur mit 'true' oder 'false'.\n\nText: {text}"
+  },
+  {
+    "id": "solution_action_behavior_change",
+    "prompt": "Wird in dem gegebenen Textsegment über Verhaltensänderungen gesprochen? Antworte nur mit 'true' oder 'false'.\n\nText: {text}"
+  },
+  {
+    "id": "solution_action_technical",
+    "prompt": "Werden in dem gegebenen Textsegment technische Lösungen empfohlen? Antworte nur mit 'true' oder 'false'.\n\nText: {text}"
+  },
+  {
+    "id": "solution_action_political",
+    "prompt": "Werden in dem gegebenen Textsegment politische Maßnahmen gefordert? Antworte nur mit 'true' oder 'false'.\n\nText: {text}"
+  },
+  {
+    "id": "solution_action_greening",
+    "prompt": "Wird in dem gegebenen Textsegment über Begrünungsmaßnahmen gesprochen? Antworte nur mit 'true' oder 'false'.\n\nText: {text}"
+  },
+  {
+    "id": "solution_action_energy_saving",
+    "prompt": "Werden in dem gegebenen Textsegment Energiesparmaßnahmen erwähnt? Antworte nur mit 'true' oder 'false'.\n\nText: {text}"
+  },
+  {
+    "id": "solution_problem_extreme_weather",
+    "prompt": "Wird in dem gegebenen Textsegment eine Lösung für Extremwetter angeboten? Antworte nur mit 'true' oder 'false'.\n\nText: {text}"
+  },
+  {
+    "id": "solution_problem_temperature",
+    "prompt": "Werden in dem gegebenen Textsegment Maßnahmen gegen Temperaturanstieg vorgeschlagen? Antworte nur mit 'true' oder 'false'.\n\nText: {text}"
+  },
+  {
+    "id": "solution_problem_emissions",
+    "prompt": "Wird in dem gegebenen Textsegment eine Lösung für Emissionsprobleme dargestellt? Antworte nur mit 'true' oder 'false'.\n\nText: {text}"
+  },
+  {
+    "id": "solution_speech_recommendation",
+    "prompt": "Enthält das gegebene Textsegment eine Empfehlung oder einen Ratschlag? Antworte nur mit 'true' oder 'false'.\n\nText: {text}"
+  },
+  {
+    "id": "solution_speech_suggestion",
+    "prompt": "Wird in dem gegebenen Textsegment ein Vorschlag für Klimamaßnahmen gemacht? Antworte nur mit 'true' oder 'false'.\n\nText: {text}"
+  },
+  {
+    "id": "solution_speech_call_to_action",
+    "prompt": "Wird in dem gegebenen Textsegment eine Aufforderung zum Handeln ausgesprochen? Antworte nur mit 'true' oder 'false'.\n\nText: {text}"
+  },
+  {
+    "id": "solution_speech_offer",
+    "prompt": "Wird in dem gegebenen Textsegment ein Angebot oder eine Hilfestellung unterbreitet? Antworte nur mit 'true' oder 'false'.\n\nText: {text}"
+  },
+  {
+    "id": "emotion_fear",
+    "prompt": "Wird in dem gegebenen Textsegment Angst oder Sorge vor dem Klimawandel ausgedrückt? Antworte nur mit 'true' oder 'false'.\n\nText: {text}"
+  },
+  {
+    "id": "emotion_hope",
+    "prompt": "Wird in dem gegebenen Textsegment Hoffnung auf Klimaschutz vermittelt? Antworte nur mit 'true' oder 'false'.\n\nText: {text}"
+  },
+  {
+    "id": "emotion_positive_solutions",
+    "prompt": "Werden in dem gegebenen Textsegment positive Emotionen mit Lösungen verbunden? Antworte nur mit 'true' oder 'false'.\n\nText: {text}"
+  },
+  {
+    "id": "emotion_urgency",
+    "prompt": "Wird in dem gegebenen Textsegment Dringlichkeit oder Zeitdruck kommuniziert? Antworte nur mit 'true' oder 'false'.\n\nText: {text}"
+  },
+  {
+    "id": "emotion_optimism",
+    "prompt": "Wird in dem gegebenen Textsegment Optimismus bezüglich Klimaschutz ausgedrückt? Antworte nur mit 'true' oder 'false'.\n\nText: {text}"
+  },
+  {
+    "id": "action_level_individual",
+    "prompt": "Wird in dem gegebenen Textsegment über individuelle Verantwortung gesprochen? Antworte nur mit 'true' oder 'false'.\n\nText: {text}"
+  },
+  {
+    "id": "action_level_collective",
+    "prompt": "Werden in dem gegebenen Textsegment kollektive Lösungsansätze betont? Antworte nur mit 'true' oder 'false'.\n\nText: {text}"
+  },
+  {
+    "id": "action_level_systemic",
+    "prompt": "Wird in dem gegebenen Textsegment systemische Veränderung gefordert? Antworte nur mit 'true' oder 'false'.\n\nText: {text}"
+  },
+  {
+    "id": "action_level_technological",
+    "prompt": "Werden in dem gegebenen Textsegment technologische Innovationen als Lösung dargestellt? Antworte nur mit 'true' oder 'false'.\n\nText: {text}"
+  },
+  {
+    "id": "communication_scientific",
+    "prompt": "Werden in dem gegebenen Textsegment wissenschaftliche Daten oder Fakten präsentiert? Antworte nur mit 'true' oder 'false'.\n\nText: {text}"
+  },
+  {
+    "id": "communication_persuasive",
+    "prompt": "Wird in dem gegebenen Textsegment appellativ oder persuasiv kommuniziert? Antworte nur mit 'true' oder 'false'.\n\nText: {text}"
+  },
+  {
+    "id": "communication_examples",
+    "prompt": "Werden in dem gegebenen Textsegment Beispiele oder Analogien verwendet? Antworte nur mit 'true' oder 'false'.\n\nText: {text}"
+  },
+  {
+    "id": "communication_imperative",
+    "prompt": "Wird in dem gegebenen Textsegment in imperativer Form gesprochen? Antworte nur mit 'true' oder 'false'.\n\nText: {text}"
+  },
+  {
+    "id": "target_specific_groups",
+    "prompt": "Werden in dem gegebenen Textsegment spezifische Zielgruppen direkt angesprochen? Antworte nur mit 'true' oder 'false'.\n\nText: {text}"
+  },
+  {
+    "id": "target_general_public",
+    "prompt": "Wird in dem gegebenen Textsegment an die allgemeine Öffentlichkeit appelliert? Antworte nur mit 'true' oder 'false'.\n\nText: {text}"
+  },
+  {
+    "id": "target_decision_makers",
+    "prompt": "Werden in dem gegebenen Textsegment Entscheidungsträger adressiert? Antworte nur mit 'true' oder 'false'.\n\nText: {text}"
+  },
+  {
+    "id": "time_perspective_past_success",
+    "prompt": "Wird in dem gegebenen Textsegment über vergangene Erfolge im Klimaschutz berichtet? Antworte nur mit 'true' oder 'false'.\n\nText: {text}"
+  },
+  {
+    "id": "time_perspective_shortterm",
+    "prompt": "Werden in dem gegebenen Textsegment kurzfristige Handlungsoptionen aufgezeigt? Antworte nur mit 'true' oder 'false'.\n\nText: {text}"
+  },
+  {
+    "id": "time_perspective_longterm_vision",
+    "prompt": "Wird in dem gegebenen Textsegment eine langfristige Klimavision präsentiert? Antworte nur mit 'true' oder 'false'.\n\nText: {text}"
+  },
+  {
+    "id": "time_perspective_irreversible",
+    "prompt": "Werden in dem gegebenen Textsegment irreversible Veränderungen erwähnt? Antworte nur mit 'true' oder 'false'.\n\nText: {text}"
+  },
+  {
+    "id": "social_justice",
+    "prompt": "Werden in dem gegebenen Textsegment soziale Gerechtigkeit und Klimaschutz verknüpft? Antworte nur mit 'true' oder 'false'.\n\nText: {text}"
+  },
+  {
+    "id": "intergenerational_justice",
+    "prompt": "Wird in dem gegebenen Textsegment über Klimagerechtigkeit zwischen Generationen gesprochen? Antworte nur mit 'true' oder 'false'.\n\nText: {text}"
+  },
+  {
+    "id": "economic_aspects",
+    "prompt": "Werden in dem gegebenen Textsegment wirtschaftliche Aspekte des Klimawandels thematisiert? Antworte nur mit 'true' oder 'false'.\n\nText: {text}"
+  },
+  {
+    "id": "adaptation_vs_mitigation",
+    "prompt": "Wird in dem gegebenen Textsegment über Klimaanpassung vs. Klimaschutz gesprochen? Antworte nur mit 'true' oder 'false'.\n\nText: {text}"
+  },
+  {
+    "id": "sector_mobility",
+    "prompt": "Wird in dem gegebenen Textsegment über Mobilität und Verkehr gesprochen? Antworte nur mit 'true' oder 'false'.\n\nText: {text}"
+  },
+  {
+    "id": "sector_energy",
+    "prompt": "Werden in dem gegebenen Textsegment Energie und Stromversorgung thematisiert? Antworte nur mit 'true' oder 'false'.\n\nText: {text}"
+  },
+  {
+    "id": "sector_agriculture",
+    "prompt": "Wird in dem gegebenen Textsegment über Ernährung und Landwirtschaft diskutiert? Antworte nur mit 'true' oder 'false'.\n\nText: {text}"
+  },
+  {
+    "id": "sector_buildings",
+    "prompt": "Wird in dem gegebenen Textsegment über Gebäude und Wohnen gesprochen? Antworte nur mit 'true' oder 'false'.\n\nText: {text}"
+  },
+  {
+    "id": "sector_consumption",
+    "prompt": "Wird in dem gegebenen Textsegment über Konsum und Lebensstil gesprochen? Antworte nur mit 'true' oder 'false'.\n\nText: {text}"
+  },
+  {
+    "id": "sector_nature_biodiversity",
+    "prompt": "Werden in dem gegebenen Textsegment Naturschutz und Biodiversität thematisiert? Antworte nur mit 'true' oder 'false'.\n\nText: {text}"
+  },
+  {
+    "id": "solution_activism",
+    "prompt": "Wird in dem gegebenen Textsegment über Klimabezogenen Aktivismus berichtet? Antworte nur mit 'true' oder 'false'.\n\nText: {text}"
+  }
+]

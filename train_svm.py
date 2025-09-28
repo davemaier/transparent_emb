@@ -29,11 +29,11 @@ async def fetch_training_data(
         labels: List of unique labels
     """
     query = """
-    SELECT 
-        feature_vector,
+    SELECT
+        vector,
         ground_truth
-    FROM feature_vectors 
-    WHERE feature_extraction_model_run_id = $1 
+    FROM feature_vectors
+    WHERE feature_extraction_model_run_id = $1
     AND ground_truth IS NOT NULL
     ORDER BY id
     """
@@ -50,10 +50,10 @@ async def fetch_training_data(
     y = []
     
     for row in rows:
-        feature_vector = json.loads(row['feature_vector'])
+        vector = row['vector']
         ground_truth = row['ground_truth']
-        
-        X.append(feature_vector)
+
+        X.append(vector)
         y.append(ground_truth)
     
     # Convert to numpy arrays

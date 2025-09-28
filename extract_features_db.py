@@ -198,9 +198,9 @@ async def fetch_text_segments(
 async def fetch_segments_with_ground_truth(
     conn: asyncpg.Connection, limit: Optional[int] = None
 ) -> List[Dict[str, Any]]:
-    """Fetch segments from segments table with ground truth labels"""
+    """Fetch segments from ground_truth_segments table with ground truth labels"""
     query = (
-        "SELECT id, content, ground_truth FROM segments WHERE ground_truth IS NOT NULL"
+        "SELECT id, content, classification FROM ground_truth_segments WHERE classification IS NOT NULL"
     )
 
     if limit:
@@ -208,7 +208,7 @@ async def fetch_segments_with_ground_truth(
 
     rows = await conn.fetch(query)
     return [
-        {"id": row["id"], "text": row["content"], "ground_truth": row["ground_truth"]}
+        {"id": row["id"], "text": row["content"], "ground_truth": row["classification"]}
         for row in rows
     ]
 
@@ -230,7 +230,7 @@ async def create_feature_extraction_model_run(
         description = f"Feature extraction using LLM prompts from segmentation run {seg_model_run_id}"
     else:
         description = (
-            "Feature extraction using LLM prompts from segments table (ground truth)"
+            "Feature extraction using LLM prompts from ground_truth_segments table (ground truth)"
         )
 
     metadata = {
@@ -268,31 +268,31 @@ async def save_feature_vector(
     total_cost: Optional[float] = None,
 ) -> None:
     """Save feature vector to database"""
-    # Convert numpy array to list for JSON serialization
-    feature_list = feature_vector.tolist()
+    # Convert numpy array to list for database storage
+    vector_list = feature_vector.tolist()
 
-    # Create mapping of prompt IDs to their positions in the feature vector
+    # Create array of prompt IDs for the prompts column
     prompt_ids = [prompt["id"] for prompt in sorted(prompts, key=lambda x: x["id"])]
 
     if is_generated_segment:
         # For generated segments
         await conn.execute(
             """
-            INSERT INTO feature_vectors (feature_extraction_model_run_id, seg_model_run_id, generated_segment_id, feature_vector, prompt_ids, ground_truth, total_cost, created_at)
+            INSERT INTO feature_vectors (feature_extraction_model_run_id, seg_model_run_id, generated_segment_id, vector, prompts, ground_truth, total_cost, created_at)
             VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
-            ON CONFLICT (feature_extraction_model_run_id, generated_segment_id) 
-            DO UPDATE SET 
-                feature_vector = EXCLUDED.feature_vector,
-                prompt_ids = EXCLUDED.prompt_ids,
+            ON CONFLICT (feature_extraction_model_run_id, generated_segment_id)
+            DO UPDATE SET
+                vector = EXCLUDED.vector,
+                prompts = EXCLUDED.prompts,
                 ground_truth = EXCLUDED.ground_truth,
                 total_cost = EXCLUDED.total_cost,
-                created_at = EXCLUDED.created_at
+                updated_at = EXCLUDED.created_at
             """,
             feature_extraction_model_run_id,
             seg_model_run_id,
             segment_id,
-            json.dumps(feature_list),
-            json.dumps(prompt_ids),
+            vector_list,
+            prompt_ids,
             ground_truth,
             total_cost,
             datetime.now(),
@@ -301,21 +301,21 @@ async def save_feature_vector(
         # For ground truth segments
         await conn.execute(
             """
-            INSERT INTO feature_vectors (feature_extraction_model_run_id, seg_model_run_id, ground_truth_segment_id, feature_vector, prompt_ids, ground_truth, total_cost, created_at)
+            INSERT INTO feature_vectors (feature_extraction_model_run_id, seg_model_run_id, ground_truth_segment_id, vector, prompts, ground_truth, total_cost, created_at)
             VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
-            ON CONFLICT (feature_extraction_model_run_id, ground_truth_segment_id) 
-            DO UPDATE SET 
-                feature_vector = EXCLUDED.feature_vector,
-                prompt_ids = EXCLUDED.prompt_ids,
+            ON CONFLICT (feature_extraction_model_run_id, ground_truth_segment_id)
+            DO UPDATE SET
+                vector = EXCLUDED.vector,
+                prompts = EXCLUDED.prompts,
                 ground_truth = EXCLUDED.ground_truth,
                 total_cost = EXCLUDED.total_cost,
-                created_at = EXCLUDED.created_at
+                updated_at = EXCLUDED.created_at
             """,
             feature_extraction_model_run_id,
             seg_model_run_id,
             segment_id,
-            json.dumps(feature_list),
-            json.dumps(prompt_ids),
+            vector_list,
+            prompt_ids,
             ground_truth,
             total_cost,
             datetime.now(),
@@ -359,7 +359,7 @@ async def process_segments(
         if use_segments:
             segments = await fetch_segments_with_ground_truth(conn, limit)
             print(
-                f"Processing {len(segments)} segments from segments table (ground truth data)"
+                f"Processing {len(segments)} segments from ground_truth_segments table (ground truth data)"
             )
         else:
             if seg_model_run_id is None:
@@ -443,11 +443,11 @@ async def process_segments(
 
         # Calculate and display total cost summary
         total_cost_query = f"""
-        SELECT 
+        SELECT
             COUNT(*) as total_segments,
             SUM(total_cost) as total_cost,
             AVG(total_cost) as avg_cost_per_segment
-        FROM feature_vectors 
+        FROM feature_vectors
         WHERE feature_extraction_model_run_id = {feature_extraction_model_run_id}
         """
 
@@ -501,7 +501,7 @@ def main():
     parser.add_argument(
         "--use-segments",
         action="store_true",
-        help="Use segments table instead of generated_segments (includes ground truth labels)",
+        help="Use ground_truth_segments table instead of generated_segments (includes ground truth labels)",
     )
 
     args = parser.parse_args()

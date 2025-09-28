@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "postgresql-mcp": {
+      "command": "npx",
+      "args": [
+        "@henkey/postgres-mcp-server",
+        "--connection-string",
+        "postgresql://traindata:traindata@localhost:5433/traindata"
+      ]
+    }
+  }
+}
